@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+  <!-- <script type="text/javascript">
+    ((function() {
+        var callbacks = []
+          , timeLimit = 50
+          , open = false;
+        setInterval(loop, 1);
+        return {
+            addListener: function(fn) {
+                callbacks.push(fn);
+            },
+            cancleListenr: function(fn) {
+                callbacks = callbacks.filter(function(v) {
+                    return v !== fn;
+                });
+            }
+        }
+        function loop() {
+            var startTime = new Date();
+            debugger ;if (new Date() - startTime > timeLimit) {
+                if (!open) {
+                    callbacks.forEach(function(fn) {
+                        fn.call(null);
+                    });
+                }
+                open = true;
+                window.stop();
+                alert('请退出浏览器开发模式');
+                window.location.reload();
+            } else {
+                open = false;
+            }
+        }
+    }
+    )()).addListener(function() {
+        window.location.reload();
+    });
+</script> -->
+
+</html>

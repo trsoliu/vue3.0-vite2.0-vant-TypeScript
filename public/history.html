@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <ul>
+      <ul>
+        <li><a href="./home">home</a></li>
+        <li><a href="./about">about</a></li>
+
+        <div id="routeView"></div>
+      </ul>
+    </ul>
+  </body>
+  <script>
+    let routerView = document.getElementById("routeView");
+    // 初始化页面加载理由管理
+    window.addEventListener("DOMContentLoaded", () => {
+      routerView.innerHTML = location.pathname;
+      var linkList = document.querySelectorAll("a[href]");
+      console.log("linkList:",linkList);
+      //给每个路由跳转事件添加监听
+      linkList.forEach((el) =>
+        el.addEventListener("click", function (e) {
+          e.preventDefault();
+          console.log(history, el.getAttribute("href"));
+          //往地址堆栈中增加路由地址
+          history.pushState(null, "", el.getAttribute("href"));
+          console.log("history:", history);
+          // 更新router view中的内容
+          routerView.innerHTML = location.pathname;
+        })
+      );
+    });
+    // 监听地址的 popstate 变化，然后来切换router view中的内容
+    window.addEventListener("popstate", () => {
+      routerView.innerHTML = location.pathname;
+    });
+  </script>
+</html>
